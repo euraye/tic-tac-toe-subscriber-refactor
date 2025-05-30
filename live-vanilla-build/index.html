@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <!-- ^Load Font Awesome icon library (required to show icons like fa-x) -->
     <script src="https://kit.fontawesome.com/3bfd3ce9e5.js" crossorigin="anonymous"></script>
     <title>Vanilla JS T3</title>
 </head>
@@ -14,29 +15,34 @@
         <!--*Main use for Dominant Content-->
         <div class="grid">
             <!-- *Turn indicator -->
-            <div class="turn">
-                <i class="fa-solid fa-x turquoise"></i>
+            <div class="turn yellow" data-id="turn">
+                <i class="fa-solid fa-x"></i>
                 <p>Player 1, you're up!</p>
             </div>
+
             <!-- *Dropdown menu -->
-            <div class="menu">
-                <button class="menu-btn"> Actions <i class="fa-solid fa-chevron-down"></i>
+            <div class="menu" data-id="menu">
+                <button class="menu-btn"> Actions
+                    <i class="fa-solid fa-chevron-down"></i>
                 </button>
-                <div class="items border hidden">
-                    <button>Reset</button>
-                    <button>New Round</button>
+            
+                <div class="items border hidden" data-id="menu-items">
+                    <button data-id="reset-btn">Reset</button>
+                    <button data-id="new-round-btn">New Round</button>
                 </div>
             </div>
+
             <!-- *Game Board -->
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
+            <div id="1" class="square shadow" data-id="square"></div>
+            <div id="2" class="square shadow" data-id="square"></div>
+            <div id="3" class="square shadow" data-id="square"></div>
+            <div id="4" class="square shadow" data-id="square"></div>
+            <div id="5" class="square shadow" data-id="square"></div>
+            <div id="6" class="square shadow" data-id="square"></div>
+            <div id="7" class="square shadow" data-id="square"></div>
+            <div id="8" class="square shadow" data-id="square"></div>
+            <div id="9" class="square shadow" data-id="square"></div>
+
             <!-- *Score Board -->
             <div class="score shadow" style="background-color: var(--turquoise)">
                 <p>Player 1</p>
@@ -59,13 +65,16 @@
         <p> Refactored by <a href="https://twitter.com/zg_dev" style="color: var(--turquoise)">@zg_dev</a>
         </p>
     </footer>
-    <!-- Modal that opens when game ends -->
+
+    <!-- *Modal that opens when game ends -->
     <div class="modal hidden" data-id="modal">
         <div class="modal-contents">
             <p data-id="modal-text">Player 1 wins!</p>
             <button data-id="modal-btn">Play again</button>
         </div>
     </div>
-    <script src="js/app.js" type="module"></script>
+
+    <!-- * This controls the entire application-->
+    <script src="JS/app.js" type="module"></script>
 </body>
 </html>
